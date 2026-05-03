@@ -1,0 +1,369 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-charcoal-50: #f7faf9;
+  --color-charcoal-100: #e0e3e3;
+  --color-charcoal-200: #c9c6c0;
+  --color-charcoal-300: #a8a8a8;
+  --color-charcoal-400: #8a8a8a;
+  --color-charcoal-500: #6b6b6b;
+  --color-charcoal-600: #4d4d4d;
+  --color-charcoal-700: #2f2f2f;
+  --color-charcoal-800: #1a1a1a;
+  --color-charcoal-900: #181c1c;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Career Coaching Sheffield Design System */
+  /* Using standard color names with semantic meaning */
+  --primary: #4d614e;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #4d614e;
+  --sidebar-primary-foreground: #ffffff;
+  --chart-1: #4d614e;
+  --chart-2: #657a66;
+  --chart-3: #5f5e59;
+  --chart-4: #715741;
+  --chart-5: #8c6f58;
+  --radius: 0.5rem;
+  --background: #f7faf9;
+  --foreground: #181c1c;
+  --card: #ffffff;
+  --card-foreground: #181c1c;
+  --popover: #ffffff;
+  --popover-foreground: #181c1c;
+  --secondary: #5f5e59;
+  --secondary-foreground: #ffffff;
+  --muted: #e0e3e3;
+  --muted-foreground: #434842;
+  --accent: #715741;
+  --accent-foreground: #ffffff;
+  --destructive: #ba1a1a;
+  --destructive-foreground: #ffffff;
+  --border: #e0e3e3;
+  --input: #f1f4f4;
+  --ring: #4d614e;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #181c1c;
+  --sidebar-accent: #e0e3e3;
+  --sidebar-accent-foreground: #181c1c;
+  --sidebar-border: #e0e3e3;
+  --sidebar-ring: #4d614e;
+}
+
+.dark {
+  --primary: #b6ccb5;
+  --primary-foreground: #0d1f11;
+  --sidebar-primary: #b6ccb5;
+  --sidebar-primary-foreground: #0d1f11;
+  --background: #0d1f11;
+  --foreground: #eef1f1;
+  --card: #1a2e1d;
+  --card-foreground: #eef1f1;
+  --popover: #1a2e1d;
+  --popover-foreground: #eef1f1;
+  --secondary: #c9c6c0;
+  --secondary-foreground: #1c1c18;
+  --muted: #384b3a;
+  --muted-foreground: #b6ccb5;
+  --accent: #e3c0a5;
+  --accent-foreground: #2a1706;
+  --destructive: #ffb4ac;
+  --destructive-foreground: #660005;
+  --border: #384b3a;
+  --input: #1a2e1d;
+  --ring: #b6ccb5;
+  --chart-1: #b6ccb5;
+  --chart-2: #d2e9d0;
+  --chart-3: #c9c6c0;
+  --chart-4: #e3c0a5;
+  --chart-5: #ffdcc1;
+  --sidebar: #1a2e1d;
+  --sidebar-foreground: #eef1f1;
+  --sidebar-accent: #384b3a;
+  --sidebar-accent-foreground: #eef1f1;
+  --sidebar-border: #384b3a;
+  --sidebar-ring: #b6ccb5;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Manrope", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Serif", serif;
+    font-weight: 600;
+  }
+
+  h1 {
+    @apply text-5xl;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply text-4xl;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    @apply text-3xl;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1140px;
+    }
+  }
+
+  /* Custom button styles for primary CTA */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold transition-all hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    border: 1px solid #181c1c;
+    color: #181c1c;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #f3f1f0;
+  }
+  
+  .btn-secondary:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #181c1c;
+    ring-offset: 2px;
+  }
+
+  /* Card styles with tonal layering */
+  .card-base {
+    @apply bg-card text-card-foreground rounded-lg border border-border p-8 transition-all;
+    box-shadow: 0 2px 8px rgba(77, 97, 78, 0.08);
+  }
+
+  .card-base:hover {
+    box-shadow: 0 4px 16px rgba(77, 97, 78, 0.12);
+  }
+
+  /* Image treatment */
+  .image-rounded {
+    @apply rounded-lg overflow-hidden;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-32;
+  }
+
+  /* Label caps style */
+  .label-caps {
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Semantic color utilities for charcoal */
+  .text-charcoal-50 {
+    color: #f8f7f6;
+  }
+  .text-charcoal-100 {
+    color: #f3f1f0;
+  }
+  .text-charcoal-200 {
+    color: #ebe7e4;
+  }
+  .text-charcoal-300 {
+    color: #ddd5d0;
+  }
+  .text-charcoal-400 {
+    color: #c4b5ad;
+  }
+  .text-charcoal-500 {
+    color: #9d8b82;
+  }
+  .text-charcoal-600 {
+    color: #6b5f58;
+  }
+  .text-charcoal-700 {
+    color: #434842;
+  }
+  .text-charcoal-800 {
+    color: #2d3131;
+  }
+  .text-charcoal-900 {
+    color: #181c1c;
+  }
+
+  .bg-charcoal-50 {
+    background-color: #f8f7f6;
+  }
+  .bg-charcoal-100 {
+    background-color: #f3f1f0;
+  }
+  .bg-charcoal-200 {
+    background-color: #ebe7e4;
+  }
+  .bg-charcoal-300 {
+    background-color: #ddd5d0;
+  }
+  .bg-charcoal-400 {
+    background-color: #c4b5ad;
+  }
+  .bg-charcoal-500 {
+    background-color: #9d8b82;
+  }
+  .bg-charcoal-600 {
+    background-color: #6b5f58;
+  }
+  .bg-charcoal-700 {
+    background-color: #434842;
+  }
+  .bg-charcoal-800 {
+    background-color: #2d3131;
+  }
+  .bg-charcoal-900 {
+    background-color: #181c1c;
+  }
+
+  .border-charcoal-50 {
+    border-color: #f8f7f6;
+  }
+  .border-charcoal-100 {
+    border-color: #f3f1f0;
+  }
+  .border-charcoal-200 {
+    border-color: #ebe7e4;
+  }
+  .border-charcoal-300 {
+    border-color: #ddd5d0;
+  }
+  .border-charcoal-400 {
+    border-color: #c4b5ad;
+  }
+  .border-charcoal-500 {
+    border-color: #9d8b82;
+  }
+  .border-charcoal-600 {
+    border-color: #6b5f58;
+  }
+  .border-charcoal-700 {
+    border-color: #434842;
+  }
+  .border-charcoal-800 {
+    border-color: #2d3131;
+  }
+  .border-charcoal-900 {
+    border-color: #181c1c;
+  }
+}
