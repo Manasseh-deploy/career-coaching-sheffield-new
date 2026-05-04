@@ -1,8 +1,4 @@
 {
-  "buildCommand": "cd client && pnpm install && pnpm build",
-  "outputDirectory": "client/dist",
-  "framework": "vite",
-  "env": {
-    "VITE_APP_TITLE": "@Career Coaching Sheffield"
-  }
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist/public"
 }
