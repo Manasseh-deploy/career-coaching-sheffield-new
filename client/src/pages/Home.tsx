@@ -34,7 +34,7 @@ export default function Home() {
           </div>
           <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-lg">
             <img 
-              src="/manus-storage/siteimage-000_7047f733.png" 
+              src="/manus-storage/siteimage-001_ec79a679.png" 
               alt="Jill - Career Coach" 
               className="w-full h-full object-cover"
             />
